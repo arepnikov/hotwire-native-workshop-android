@@ -1,10 +1,15 @@
 package com.example.hotwirenativeworkshop
 
 import android.app.Application
+import com.example.hotwirenativeworkshop.features.web.WebBottomSheetFragment
+import com.example.hotwirenativeworkshop.features.web.WebFragment
 import dev.hotwire.core.BuildConfig
 import dev.hotwire.core.bridge.KotlinXJsonConverter
 import dev.hotwire.core.config.Hotwire
 import dev.hotwire.core.turbo.config.PathConfiguration
+import dev.hotwire.navigation.config.defaultFragmentDestination
+import dev.hotwire.navigation.config.registerFragmentDestinations
+
 
 class KanbanBoardApplication : Application() {
     override fun onCreate() {
@@ -18,6 +23,15 @@ class KanbanBoardApplication : Application() {
             location = PathConfiguration.Location(
                 assetFilePath = "json/path-configuration.json"
             )
+        )
+
+        // Set the default fragment destination
+        Hotwire.defaultFragmentDestination = WebFragment::class
+
+        // Register fragment destinations
+        Hotwire.registerFragmentDestinations(
+            WebFragment::class,
+            WebBottomSheetFragment::class
         )
 
         // Set configuration options
