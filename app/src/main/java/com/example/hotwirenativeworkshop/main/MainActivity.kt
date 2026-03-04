@@ -1,8 +1,9 @@
-package com.example.hotwirenativeworkshop
+package com.example.hotwirenativeworkshop.main
 
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
+import com.example.hotwirenativeworkshop.R
 import dev.hotwire.navigation.activities.HotwireActivity
 import dev.hotwire.navigation.navigator.NavigatorConfiguration
 import dev.hotwire.navigation.util.applyDefaultImeWindowInsets
