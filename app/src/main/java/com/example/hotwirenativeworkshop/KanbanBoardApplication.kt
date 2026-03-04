@@ -21,7 +21,8 @@ class KanbanBoardApplication : Application() {
         Hotwire.loadPathConfiguration(
             context = this,
             location = PathConfiguration.Location(
-                assetFilePath = "json/path-configuration.json"
+                assetFilePath = "json/path-configuration.json",
+                remoteFileUrl = "${KanbanBoard.current.url}/configurations/android_v1.json"
             )
         )
 
