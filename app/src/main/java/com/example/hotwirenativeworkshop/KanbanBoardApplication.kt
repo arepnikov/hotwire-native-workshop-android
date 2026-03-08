@@ -2,6 +2,7 @@ package com.example.hotwirenativeworkshop
 
 import android.app.Application
 import com.example.hotwirenativeworkshop.bridge.ButtonComponent
+import com.example.hotwirenativeworkshop.bridge.FormComponent
 import com.example.hotwirenativeworkshop.features.web.WebBottomSheetFragment
 import com.example.hotwirenativeworkshop.features.web.WebFragment
 import dev.hotwire.core.BuildConfig
@@ -40,7 +41,8 @@ class KanbanBoardApplication : Application() {
 
         // Register bridge components
         Hotwire.registerBridgeComponents(
-            BridgeComponentFactory("button", ::ButtonComponent)
+            BridgeComponentFactory("button", ::ButtonComponent),
+            BridgeComponentFactory("form", ::FormComponent)
         )
 
         // Set configuration options
