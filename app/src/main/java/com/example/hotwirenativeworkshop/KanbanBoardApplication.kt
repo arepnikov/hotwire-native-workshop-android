@@ -1,13 +1,16 @@
 package com.example.hotwirenativeworkshop
 
 import android.app.Application
+import com.example.hotwirenativeworkshop.bridge.ButtonComponent
 import com.example.hotwirenativeworkshop.features.web.WebBottomSheetFragment
 import com.example.hotwirenativeworkshop.features.web.WebFragment
 import dev.hotwire.core.BuildConfig
+import dev.hotwire.core.bridge.BridgeComponentFactory
 import dev.hotwire.core.bridge.KotlinXJsonConverter
 import dev.hotwire.core.config.Hotwire
 import dev.hotwire.core.turbo.config.PathConfiguration
 import dev.hotwire.navigation.config.defaultFragmentDestination
+import dev.hotwire.navigation.config.registerBridgeComponents
 import dev.hotwire.navigation.config.registerFragmentDestinations
 
 
@@ -33,6 +36,11 @@ class KanbanBoardApplication : Application() {
         Hotwire.registerFragmentDestinations(
             WebFragment::class,
             WebBottomSheetFragment::class
+        )
+
+        // Register bridge components
+        Hotwire.registerBridgeComponents(
+            BridgeComponentFactory("button", ::ButtonComponent)
         )
 
         // Set configuration options
