@@ -13,6 +13,17 @@
     },
     {
       "patterns": [
+        "/boards$"
+      ],
+      "properties": {
+        "context": "default",
+        "uri": "hotwire://fragment/web",
+        "presentation": "replace",
+        "pull_to_refresh_enabled": true
+      }
+    },
+    {
+      "patterns": [
         "/boards/new$"
       ],
       "properties": {
