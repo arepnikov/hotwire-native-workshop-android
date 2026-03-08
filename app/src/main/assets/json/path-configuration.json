@@ -13,7 +13,7 @@
     },
     {
       "patterns": [
-        "/new$"
+        "/boards/new$"
       ],
       "properties": {
         "context": "modal",
